@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+   <!-- Head........................................................-->
+
+   <head>
+     <title>Enter the Castle canvas game</title>
+     <link rel='stylesheet' href='../css/game.css'/>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <script src='../js/main.js'></script>
+     <script src='../js/initializeNewGame.js'></script>
+   </head>
+
+   <!-- Body........................................................-->
+
+   <body>
+      <!-- Wrapper..................................................-->
+
+      <div id='wrapper'>
+         <!-- Header.................................................-->
+         <header class="header">
+            ENTER THE CASTLE
+         <header>
+
+         <!-- Score display section-->   
+         <!-- <div id='scoring_area'>
+            <div id='lives'>
+            </div>
+
+            <div id='score'>0</div>
+            <div id='fps'></div>
+         </div> -->
+
+         <!-- Arena..................................................-->
+
+         <div id='arena'>
+            <!-- The game canvas.....................................-->
+            <canvas id='game_canvas' width='400' height='400'>
+               Your browser does not support HTML5 Canvas.
+            </canvas>
+            <div class="backdrop"></div>
+            <div class="gamebackdrop"></div>
+            <div class="box">
+                  This is the lightbox!!!
+            </div>
+
+            <!-- the main menu -->
+            <div class="backdrop1"></div>
+            <div id="mainMenu">
+                  <div class="menu_option" id="start_game">
+                     Start Game
+                  </div>
+                  <div class="menu_option" id="game_tips">
+                     Instructions
+                  </div>
+                  <div class="menu_option" id="game_credits">
+                     Credits
+                  </div>
+            </div>
+
+            <!-- Instructions........................................-->
+            <div class="backdrop2"></div>
+            <div id='instructions'>
+               <div class="section_body">
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon_disabled.png" alt="<" class="prevFiller" width="40px" height="40px">
+                        <img alt="grid sample image" src="../img/grid_image.png" width="100px" height="100px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h3>Puzzle grid</h3>
+                        <p>
+                           Player will be on the top-left corner block of the grid when the game begins.
+                        </p>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img src="../img/game_win_image.png" class="icon_image"  width="240px" height="150px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Target</h1>
+                        <p> 
+                           You win the game if the block next to the way to the castle is pointing to the gate and all the other blocks in the grid are now stop blocks.
+                        </p>
+                     </article>
+                  </section>
+
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img alt="up arrow" src="../img/arrowKeys.png" width="240px" height="100px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>How to play</h1>
+                        <span> You can use the mouse or the keyboard to play </span>
+                        <ul>
+                           <li> The arrow keys shown above on the keyboard can be used.</li>
+                           <li> You can also click on the block you want to move to. </li>
+                        </ol>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img alt="up arrow" src="../img/moveExample.png" width="240px" height="60px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Player movement options:</h1>
+                        <span> You can do two things on the grid: </span>
+                        <ul>
+                           <li> If you move in a direction the block cannot move, you move over to the next block</li>
+                           <li> Example: If you are on the up arrow shown above and you move right, you will be on the right arrow </li>
+                        </ol>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img alt="up arrow" src="../img/swapExample.png" width="240px" height="60px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        The second thing is swap blocks: 
+                        <ul>
+                           <li> If you move in a direction the block can move, then u exchange with the next block in that direction along with a block transformation. </li>
+                           <li>Example: If you are on a right arrow and move right, you exchange place with the block on right and your arrow becomes yellow.</li>
+                        </ul>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img src="../img/rightArrow_green.png" class="icon_image"  width="80px" height="80px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Arrow Blocks</h1>
+                        <ul>
+                           <li>Arrow blocks can move in the direction it points by swapping with the next block.</li>
+                           <li>Arrow blocks cannot swap with a stationary block. </li>
+                           <li>A green arrow block on moving becomes a yellow arrow block </li>
+                           <li>A yellow arrow block on moving becomes a stationary block.</li>
+                        </ul> 
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img src="../img/goAnyWay_green.png" class="icon_image"  width="80px" height="80px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Star Blocks</h1>
+                        <ul>
+                           <li>Star block can move in all directions by swapping with the next block. </li>
+                           <li>Star block cannot swap with a stationary block. </li>
+                        </ul>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img src="../img/starBlockTransitions.png" class="icon_image"  width="240px" height="60px"/>
+                        <img src="../img/next_icon.png" alt=">" class="next" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Star Blocks</h1>
+                        <ul>
+                           <li>A green star block on moving becomes yellow arrow block.</li>
+                           <li>A yellow star block on moving becomes a stationary block. </li>
+                           <li>Once you enter this block you can only get off on a statonary block or after two moves.</li>
+                        </ul>
+                     </article>
+                  </section>
+                  <section class="shortNotes">
+                     <header>
+                        <img src="../img/prev_icon.png" alt="<" class="prev" width="40px" height="40px">
+                        <img src="../img/safeSpot.png" class="icon_image"  width="80px" height="80px"/>
+                        <img src="../img/next_icon_disabled.png" alt="<" class="nextFiller" width="40px" height="40px">
+                     </header>
+                     <article>
+                        <h1>Stop Blocks</h1>
+                        <p> 
+                           This block does not swap with any other block and is fixed where it is. 
+                        </p>
+                     </article>
+                  </section>
+               </div>
+               <footer>
+                  <div class="main_menu_link" name="instructions"> Main Menu </div>
+               </footer>
+            </div>
+
+            <!-- the credits section -->
+            <div id="credits">
+               <div class="section_body">
+                  <div class="list_credit">
+                     Design and Development: Arathi S
+                  </div>
+                  <div class="list_credit">
+                     Suggestions and testing: Raveen V
+                  </div>
+               </div>
+               <footer>
+                  <div class="main_menu_link" name="credits"> Main Menu </div>
+               </footer>
+            </div>
+
+            <!--<div id='instructions'>
+               <div class='keys'>
+                  l / r
+
+                  <div class='explanation'>
+                     move left/right
+                  </div>
+               </div>
+
+               <div class='keys'>
+                  u / d
+
+                  <div class='explanation'>
+                     move up/down
+                  </div>
+               </div>
+
+            </div> -->
+
+            <div class="game_keys">
+               <div class="game_tab_key main_menu_link" name="keytab">
+                  Menu
+               </div>
+               <div id="game_reset" class="game_tab_key">
+                  Reset
+               </div>
+               <div id="game_undo" class="game_tab_key undo_disable">
+                  Undo
+               </div>
+               <!-- Sound and music keys-->
+               <div class='game_tab_key checkbox-div'>
+                  Sound <input id='sound-checkbox'
+                                  type='checkbox' checked/>
+               </div>
+               <div class='game_tab_key checkbox-div'>
+                  Music <input id='music-checkbox'
+                                  type='checkbox' checked/>
+               </div>
+            </div>
+         </div>
+
+         <footer>
+            <!-- Copyright...........................................-->
+            <div id='copyright'> ©2013 Arathi S</div>
+         </footer>
+      </div>     
+  </body>
+</html>
