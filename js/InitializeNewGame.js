@@ -150,20 +150,20 @@ function puzzleGame() {
     }
 
     function initialize() {
-       goLeftBlockGreen.src = '../img/leftArrow_green.png';
-       goRightBlockGreen.src = '../img/rightArrow_green.png';
-       goDownBlockGreen.src = '../img/downArrow_green.png';
-       goUpBlockGreen.src = '../img/topArrow_green.png';
-       anyWayBlockGreen.src = '../img/goAnyWay_green.png';
-       goLeftBlockYellow.src = '../img/leftArrow_yellow.png';
-       goRightBlockYellow.src = '../img/rightArrow_yellow.png';
-       goDownBlockYellow.src = '../img/downArrow_yellow.png';
-       goUpBlockYellow.src = '../img/topArrow_yellow.png';
-       anyWayBlockYellow.src = '../img/goAnyWay_yellow.png';
-       stopBlock.src = '../img/safeSpot.png';
-       player.src = '../img/player.png';
-       playerHome.src = '../img/home.png';
-       pathway.src = '../img/pathway.png';
+       goLeftBlockGreen.src = 'img/leftArrow_green.png';
+       goRightBlockGreen.src = 'img/rightArrow_green.png';
+       goDownBlockGreen.src = 'img/downArrow_green.png';
+       goUpBlockGreen.src = 'img/topArrow_green.png';
+       anyWayBlockGreen.src = 'img/goAnyWay_green.png';
+       goLeftBlockYellow.src = 'img/leftArrow_yellow.png';
+       goRightBlockYellow.src = 'img/rightArrow_yellow.png';
+       goDownBlockYellow.src = 'img/downArrow_yellow.png';
+       goUpBlockYellow.src = 'img/topArrow_yellow.png';
+       anyWayBlockYellow.src = 'img/goAnyWay_yellow.png';
+       stopBlock.src = 'img/safeSpot.png';
+       player.src = 'img/player.png';
+       playerHome.src = 'img/home.png';
+       pathway.src = 'img/pathway.png';
        
        playerHome.onload = function (e) {
           draw();
